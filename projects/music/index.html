@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Trainer — Farhan Amin</title>
+  <meta name="description" content="A free, private singing coach in the browser: sing into the microphone, see the note you are on, practise matching and holding notes, and sing along with your own songs under a real night sky.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Music Trainer — Farhan Amin">
+  <meta property="og:description" content="A free, private singing coach in the browser: sing into the microphone, see the note you are on, practise matching and holding notes, and sing along with your own songs under a real night sky.">
+  <meta property="og:url" content="https://crazycatz67.github.io/projects/music/">
+  <meta property="og:image" content="https://crazycatz67.github.io/assets/music/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EFA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../../css/site.css">
+  <script src="../../js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="Farhan Amin, home">F<span>/</span>A</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#projects">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-optional" href="../../#contact">Contact</a>
+      <a href="../../assets/Farhan-Amin-Resume.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article>
+    <header class="cs-head">
+      <div class="wrap">
+        <p class="crumb"><a href="../../#projects">← All projects</a></p>
+        <p class="kicker">Personal project · 2026 · Live</p>
+        <h1>Music Trainer</h1>
+        <p class="lede">A free, private singing coach that runs in the browser. Sing into the microphone, see the note you are on, practise matching and holding notes, and sing along with songs you bring yourself, all under a real night sky that your practice lights up.</p>
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/music-trainer/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/music-trainer" rel="noopener">Source ↗</a></li>
+        </ul>
+
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Owner &amp; director of an AI-agent team</dd></div>
+          <div><dt>Built</dt><dd>Oct 12–15, 2026</dd></div>
+          <div><dt>Stack</dt><dd>JavaScript, Web Audio, three.js, ONNX Runtime Web</dd></div>
+          <div><dt>Tests</dt><dd>859 unit tests · 39 browser test labs</dd></div>
+        </dl>
+
+        <figure class="cs-media">
+          <div class="media media-wide" data-media-slot="music-demo">
+            <img src="../../assets/music/sky-home.jpg" width="1280" height="800" decoding="async" alt="The Music Trainer home screen: a 3D night sky with glowing constellation figures over a dark horizon. Labels name the places to go: The Ladder (practice), The Open Sky (free sing), The Lyre (songs), Tonight (today's five minutes) with a Start button, and Your Sky (progress).">
+          </div>
+          <figcaption>The home screen is a planetarium: the real sky for your time and place. Each place in it opens one part of the app.</figcaption>
+        </figure>
+
+        <aside class="camera-note" aria-labelledby="mic-title">
+          <h2 id="mic-title">Before you try</h2>
+          <p>Made for Chrome on a laptop or desktop. Use headphones when a reference note or song plays, so the microphone hears only you.</p>
+          <ul>
+            <li>The microphone turns on only when you press Start, and turns off when you stop, pause or leave the screen.</li>
+            <li>Your voice and your song files stay on your computer. The microphone opens only inside the app, never on this portfolio.</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <div class="wrap cs-body">
+      <section aria-labelledby="why">
+        <h2 id="why">Why I built it</h2>
+        <p>I want to learn to sing. Paid singing apps cost roughly $60–120 a year and centre on songs and scores; what I wanted was a free, private tool that shows the raw pitch line, measures how steady a note is and explains in plain words what went wrong.</p>
+      </section>
+
+      <section aria-labelledby="what">
+        <h2 id="what">What it does</h2>
+        <ul>
+          <li><strong>Free sing:</strong> the note you are on, drawn live on a scrolling stage as a ribbon of light.</li>
+          <li><strong>Practice:</strong> a voice check, find your range, glide warm-ups, sirens, match and hold, long notes, an eyes-closed round, and "sing a constellation", where each held note lights the next star of a figure. Every exercise stays inside your measured range.</li>
+          <li><strong>Sing along with your own songs:</strong> drop in a file and the app separates the singer from the music on your computer, finds the tune, looks up the words, and lets you set the Music and Singer volume separately. Public-domain demo songs mean there is something to sing at once.</li>
+          <li><strong>Coaching and progress:</strong> plain tips after each round (drift, wobble, how you start a note), a letter grade for songs, a five-minute daily session and a record of your practice.</li>
+        </ul>
+      </section>
+
+      <div class="cs-gallery">
+        <figure class="cs-media">
+          <div class="media media-wide"><img src="../../assets/music/practice.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The Practice screen: nine cards in a grid, including Free sing, Voice check, Long note, Glide warm-up, Find your range, Match and hold, Siren, Sing a constellation and Eyes closed, each with a one-line description and how long it takes."></div>
+          <figcaption>Practice: nine exercises, each with how long it takes.</figcaption>
+        </figure>
+        <figure class="cs-media">
+          <div class="media media-wide"><img src="../../assets/music/songs.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The Songs screen: a large drop area that says Drop a song here, or Choose a file, and a note explaining that looking up words sends only the song's title and artist to lrclib.net, never the sound or your voice."></div>
+          <figcaption>Songs: drop in your own file. Only the title and artist ever leave the computer, to look up the words.</figcaption>
+        </figure>
+        <figure class="cs-media">
+          <div class="media media-wide"><img src="../../assets/music/mic-ask.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Free sing after pressing Start: a dialog titled Turn on your microphone explains that the trainer listens to find the note, that sound stays on this computer, and that nothing is recorded unless you press Save, with Turn on microphone and Not now buttons."></div>
+          <figcaption>The app explains the microphone before the browser asks for it.</figcaption>
+        </figure>
+      </div>
+
+      <section aria-labelledby="how">
+        <h2 id="how">How it works</h2>
+        <ol>
+          <li><strong>Listen:</strong> the microphone is opened with echo cancellation, noise suppression and auto gain turned off, because they damage a sung note; the app then checks what the browser really applied.</li>
+          <li><strong>Find the pitch:</strong> a pitch detector (pitchy, McLeod method) reads each audio frame. When a frame is not clearly voiced, it reports no note instead of guessing.</li>
+          <li><strong>Analyse a song:</strong> in the browser, HTDemucs separates the singer from the backing and SwiftF0 reads the tune. The models download only after you press for them.</li>
+          <li><strong>Draw:</strong> three.js renders a dome of 8,920 real stars and 88 constellation figures, rotated for your time and place.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="hard">
+        <h2 id="hard">Hard parts</h2>
+        <ul>
+          <li><strong>A microphone you can trust:</strong> it must never stay on after you look away. Every screen is tested to make zero microphone requests on load and leave zero live tracks when you pause, open a sheet, press Esc or leave. Testers found a family of "press, then leave" timing bugs, and each was fixed with a failing test first.</li>
+          <li><strong>Calm light:</strong> a planetarium that flashes would hurt a tool for calm practice. I measure the brightness change of every patch of screen and keep it under a fixed flash limit, and the sky draws in under half a millisecond per frame.</li>
+          <li><strong>A note that doesn't sound robotic:</strong> beginners match a voice more easily than a beep. A soft synth and a shaped "oo" still sounded artificial to me, so the default is now real recorded "oo" samples.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="team">
+        <h2 id="team">How I built it: directing an AI-agent team</h2>
+        <p>I ran this project as the lead of a small team of AI coding agents (Claude), each with one job: research, design, building, breaking things, testing and keeping the record. I set the goals and made the product calls; agents built in separate branches, and nothing was merged until a single command (859 unit tests plus 39 browser test labs in headless Chrome, with fake microphones and muted sound) came back green.</p>
+      </section>
+
+      <section aria-labelledby="learned">
+        <h2 id="learned">What I learned</h2>
+        <p>How digital audio and pitch detection work, how to run machine-learning models in the browser, and how to lead a team of AI agents with clear rules: tests before merges, honest numbers, and privacy as a hard requirement rather than a setting.</p>
+      </section>
+
+      <section aria-labelledby="next">
+        <h2 id="next">Honest limits and what's next</h2>
+        <p>Almost all of the measurements so far use synthesised voices, so coaching thresholds are first guesses until they are calibrated on real singing. Next: recording and replaying free-sing takes, a reference note in your own recorded voice, and later a piano mode for an acoustic grand piano.</p>
+      </section>
+
+      <section aria-labelledby="privacy">
+        <h2 id="privacy">Privacy</h2>
+        <p>No accounts. Your voice and song files never leave your computer; looking up the words sends only a song's title and artist, and can be turned off in Settings.</p>
+      </section>
+
+      <nav class="cs-end" aria-label="Project links">
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/music-trainer/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/music-trainer" rel="noopener">Source ↗</a></li>
+          <li><a class="btn" href="../neurotech/">Next project: Neurotech × Hologram →</a></li>
+        </ul>
+      </nav>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Farhan Amin · Built by hand (and by hands) · <a href="mailto:mail.aminfarhan@gmail.com">Email</a> · <a href="https://github.com/Crazycatz67" rel="noopener">GitHub</a><span data-linkedin hidden> · <a href="#" rel="noopener">LinkedIn</a></span></span>
+    <a href="https://github.com/Crazycatz67/Crazycatz67.github.io" rel="noopener">Source on GitHub</a>
+  </div>
+</footer>
+</body>
+</html>

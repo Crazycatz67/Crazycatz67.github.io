@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASL Fingerspelling Recognizer — Farhan Amin</title>
+  <meta name="description" content="A browser app that reads the American Sign Language alphabet from your webcam in about half a second per letter, and helps you learn it.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ASL Fingerspelling Recognizer — Farhan Amin">
+  <meta property="og:description" content="A browser app that reads the American Sign Language alphabet from your webcam in about half a second per letter, and helps you learn it.">
+  <meta property="og:url" content="https://crazycatz67.github.io/projects/asl/">
+  <meta property="og:image" content="https://crazycatz67.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EFA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../../css/site.css">
+  <script src="../../js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="Farhan Amin, home">F<span>/</span>A</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#projects">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-optional" href="../../#contact">Contact</a>
+      <a href="../../assets/Farhan-Amin-Resume.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article>
+    <header class="cs-head">
+      <div class="wrap">
+        <p class="crumb"><a href="../../#projects">← All projects</a></p>
+        <p class="kicker">Personal project · 2026 · Live</p>
+        <h1>ASL Fingerspelling Recognizer</h1>
+        <p class="lede">A browser app that reads the American Sign Language alphabet from your webcam in about half a second per letter, and helps you learn it.</p>
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/asl-recognizer/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/asl-recognizer" rel="noopener">Source ↗</a></li>
+          <li><a class="btn" href="https://crazycatz67.github.io/asl-recognizer/about.html" rel="noopener">Project notes ↗</a></li>
+        </ul>
+
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Solo designer &amp; developer</dd></div>
+          <div><dt>Built</dt><dd>Sept–Oct 2026</dd></div>
+          <div><dt>Stack</dt><dd>JavaScript, MediaPipe, k-NN</dd></div>
+          <div><dt>Accuracy</dt><dd>~97% held-out (every letter ≥ 92%)</dd></div>
+        </dl>
+
+        <figure class="cs-media">
+          <!-- Media slot: replace the poster with a screenshot, or a demo recording:
+               <video data-demo muted loop playsinline preload="metadata" poster="../../assets/asl-poster.webp" width="1280" height="720">
+                 <source src="../../assets/asl-demo.webm" type="video/webm">
+                 <source src="../../assets/asl-demo.mp4" type="video/mp4">
+               </video>
+               (no autoplay attribute: js/site.js starts it unless reduced motion is on) -->
+          <div class="media" data-media-slot="asl-demo">
+              <img src="../../assets/asl-poster.jpg" width="1200" height="750" decoding="async" alt="The ASL Fingerspelling Recognizer start screen: the headline "Fingerspell with your hands", Start and Try it with your hand buttons, and an A to Z progress grid.">
+            </div>
+          <figcaption>The app's start screen. Press Start and allow the camera to begin.</figcaption>
+        </figure>
+
+        <aside class="camera-note" aria-labelledby="cam-title">
+          <h2 id="cam-title">Before you try</h2>
+          <p>Needs a webcam and one permission click. The video never leaves your device.</p>
+          <ul>
+            <li>Works on desktop and on phones.</li>
+            <li>The camera opens only inside the app, never on this portfolio.</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <div class="wrap cs-body">
+      <section aria-labelledby="why">
+        <h2 id="why">Why I built it</h2>
+        <p>At a campus event I was in line next to a deaf man and couldn't communicate with him. Fingerspelling is the part of ASL used for names and words with no sign, and it's where many learners start. I wanted a tool that watches you sign and tells you, honestly, whether it's readable.</p>
+      </section>
+
+      <section aria-labelledby="what">
+        <h2 id="what">What it does</h2>
+        <ul>
+          <li>Recognises A–Z live, on desktop or phone, including J and Z (moving letters traced as a stroke).</li>
+          <li><strong>Practice mode:</strong> a live "readable / not yet" meter with a correction guide drawn on your hand.</li>
+          <li><strong>Challenge mode:</strong> a timed game with combos, Normal/Hard difficulty and look-alike letters.</li>
+          <li><strong>Read mode:</strong> an animated hand spells a word and you type it, with a course that unlocks letters in a teaching order.</li>
+          <li><strong>Spell mode:</strong> fingerspell continuously into a transcript; a beta mode segments it into words and speaks them.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="how">
+        <h2 id="how">How it works</h2>
+        <ol>
+          <li><strong>Track:</strong> Google's MediaPipe HandLandmarker finds 21 points on the hand in each frame.</li>
+          <li><strong>Normalise:</strong> points are recentred on the wrist and scaled to hand size, so distance and handedness don't matter.</li>
+          <li><strong>Classify:</strong> a k-nearest-neighbours classifier compares the shape to a labelled reference set built from 10,000+ images; small learned "refinement heads" break the ties k-NN gets wrong (M/N, D/O/C).</li>
+          <li><strong>Stabilise:</strong> a letter shows only after the same guess holds for a few frames.</li>
+        </ol>
+        <p>Plain JavaScript: no ML framework at runtime, no build step, no network calls after load.</p>
+      </section>
+
+      <section aria-labelledby="hard">
+        <h2 id="hard">Hard parts</h2>
+        <ul>
+          <li><strong>Look-alike letters:</strong> M, N, D, O and C differ by a finger or two, so I added targeted second-stage classifiers for those pairs.</li>
+          <li><strong>Motion letters:</strong> J and Z are movements, not shapes, so they're detected from a traced stroke over time.</li>
+          <li><strong>Honesty:</strong> I measured accuracy on held-out data and say plainly that it's a ceiling. It's mostly been tested by one signer, and it isn't native speed.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="learned">
+        <h2 id="learned">What I learned</h2>
+        <p>How a real-time vision pipeline fits together end to end, why per-letter metrics matter more than one average, and how to run a disciplined test-and-fix loop with AI coding agents.</p>
+      </section>
+
+      <section aria-labelledby="next">
+        <h2 id="next">What's next</h2>
+        <p>A sequence model that reads letter transitions (the way Google's fingerspelling research does) to reach real speed, digits 0–9, and testing with ASL educators and Deaf signers, ideally at RIT/NTID, to build it with them rather than for them.</p>
+      </section>
+
+      <section aria-labelledby="privacy">
+        <h2 id="privacy">Privacy</h2>
+        <p>Everything runs in the browser. No video, images or hand data are uploaded, and there are no accounts or analytics.</p>
+      </section>
+
+      <nav class="cs-end" aria-label="Project links">
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/asl-recognizer/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/asl-recognizer" rel="noopener">Source ↗</a></li>
+          <li><a class="btn" href="../hologram/">Next project: Hologram Workshop →</a></li>
+        </ul>
+      </nav>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Farhan Amin · Built by hand (and by hands) · <a href="mailto:mail.aminfarhan@gmail.com">Email</a> · <a href="https://github.com/Crazycatz67" rel="noopener">GitHub</a><span data-linkedin hidden> · <a href="#" rel="noopener">LinkedIn</a></span></span>
+    <a href="https://github.com/Crazycatz67/Crazycatz67.github.io" rel="noopener">Source on GitHub</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hologram Workshop — Farhan Amin</title>
+  <meta name="description" content="Scan a real object or room with a phone's LiDAR camera, then handle its hologram with your bare hands: grab it, turn it, take it apart and measure it in real centimetres.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hologram Workshop — Farhan Amin">
+  <meta property="og:description" content="Scan a real object or room with a phone's LiDAR camera, then handle its hologram with your bare hands: grab it, turn it, take it apart and measure it in real centimetres.">
+  <meta property="og:url" content="https://crazycatz67.github.io/projects/hologram/">
+  <meta property="og:image" content="https://crazycatz67.github.io/assets/hologram-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EFA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../../css/site.css">
+  <script src="../../js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="Farhan Amin, home">F<span>/</span>A</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#projects">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-optional" href="../../#contact">Contact</a>
+      <a href="../../assets/Farhan-Amin-Resume.pdf">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article>
+    <header class="cs-head">
+      <div class="wrap">
+        <p class="crumb"><a href="../../#projects">← All projects</a></p>
+        <p class="kicker">Personal project · 2026 · Live</p>
+        <h1>Hologram Workshop</h1>
+        <p class="lede">Scan a real object or room with a phone's LiDAR camera, then handle its hologram with your bare hands: grab it, turn it, take it apart and measure it in real centimetres.</p>
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/hologram-workshop/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/hologram-workshop" rel="noopener">Source ↗</a></li>
+          <li><a class="btn" href="https://crazycatz67.github.io/hologram-workshop/about.html" rel="noopener">Project notes ↗</a></li>
+        </ul>
+
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Solo designer &amp; developer</dd></div>
+          <div><dt>Built</dt><dd>Sept–Oct 2026</dd></div>
+          <div><dt>Stack</dt><dd>Three.js, MediaPipe, Python</dd></div>
+          <div><dt>Fill accuracy</dt><dd>Within 2 cm on ~98% of the test area</dd></div>
+        </dl>
+
+        <figure class="cs-media">
+          <!-- Media slot: when a recording exists, replace the <img> with
+               <video data-demo muted loop playsinline preload="metadata" poster="../../assets/hologram-hero.webp" width="1200" height="900">
+                 <source src="../../assets/hologram-demo.webm" type="video/webm">
+                 <source src="../../assets/hologram-demo.mp4" type="video/mp4">
+               </video>
+               (no autoplay attribute: js/site.js starts it unless reduced motion is on) -->
+          <div class="media" data-media-slot="hologram-demo">
+            <img src="../../assets/hologram-hero.webp" width="1200" height="900" decoding="async" alt="A scanned office chair rendered as a glowing blue hologram on a dark background.">
+          </div>
+          <figcaption>A phone LiDAR scan of a chair, rendered with the workshop's hologram material.</figcaption>
+        </figure>
+
+        <aside class="camera-note" aria-labelledby="cam-title">
+          <h2 id="cam-title">Before you try</h2>
+          <p>Best on a laptop or desktop with a webcam and good front light. A mouse works for everything too.</p>
+          <ul>
+            <li>Not built for phones: the page opens on one, but hand control needs a laptop or desktop with a webcam.</li>
+            <li>Camera video is processed in the browser and never uploaded. The camera opens only inside the app, never on this portfolio.</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <div class="wrap cs-body">
+      <section aria-labelledby="why">
+        <h2 id="why">Why I built it</h2>
+        <p>I wanted the Iron Man workshop: pull a real object into the air and work on it with your hands. It started as one scanned chair and grew into a platform where any scan becomes a hologram you can handle.</p>
+      </section>
+
+      <section aria-labelledby="what">
+        <h2 id="what">What it does</h2>
+        <ul>
+          <li><strong>Hand control:</strong> aim with a pointing finger, fist to grab, two hands to tilt, scale or explode a model into parts, clap to reset. A ✌ tool wheel picks tools without touching the keyboard.</li>
+          <li><strong>True-size measuring:</strong> scans keep real-world scale, so the tape measure reads real centimetres.</li>
+          <li><strong>Your own scans:</strong> opens GLB, glTF, OBJ and PLY files and splits them into objects and parts automatically.</li>
+          <li><strong>Library, lens and pins:</strong> scenes save in the browser; a polygon lens inspects the mesh; pins stop pieces moving by accident.</li>
+          <li><strong>Games and guided practice:</strong> calibration, one-gesture-at-a-time drills, and small games to learn the moves.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="how">
+        <h2 id="how">How it works</h2>
+        <ol>
+          <li><strong>Track:</strong> MediaPipe finds 21 points on each hand in every webcam frame, in the browser.</li>
+          <li><strong>Smooth:</strong> a One Euro filter steadies the points without adding lag on fast moves.</li>
+          <li><strong>Interpret:</strong> each pose has one meaning, with a short pause between gestures so one doesn't bleed into the next.</li>
+          <li><strong>Render:</strong> Three.js draws the scan with a holographic material, checked so nothing flashes more than three times a second.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="scan">
+        <h2 id="scan">Scan completion (the research part)</h2>
+        <p>A phone scan only sees what the camera saw, so chair undersides, sofa backs and skipped patches come out missing. I built an offline Python tool that fills those gaps from the measured surfaces around them (thickness, symmetry, flat planes).</p>
+        <p>The rule: the real scan always wins. Measured faces are never moved, and every filled surface is marked as inferred with an amber hatch. On the sample chair the filled underside matches the real one to within 2 cm on about 98% of its area. On a real scanned room, registration reaches 9.4 mm RMSE.</p>
+      </section>
+
+      <section aria-labelledby="hard">
+        <h2 id="hard">Hard parts</h2>
+        <ul>
+          <li><strong>Gestures that feel like a test:</strong> my own live trials showed missed pinches and drifting tilt, so I rebuilt the input layer (Hands v2) around one clear click gesture, a quaternion-based tilt and per-user calibration.</li>
+          <li><strong>Being honest about guessed geometry:</strong> filling a hole is easy; showing which parts are real and which are inferred is the hard, important part.</li>
+          <li><strong>Accessibility:</strong> flash limits, mouse parity and reduced motion.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="learned">
+        <h2 id="learned">What I learned</h2>
+        <p>3D math (quaternions, mesh registration, plane fitting), designing gesture UX by watching real use, and benchmarking an algorithm against ground truth instead of eyeballing it.</p>
+      </section>
+
+      <section aria-labelledby="next">
+        <h2 id="next">What's next</h2>
+        <p>Grab-and-move for individual parts, photo → 3D for objects without LiDAR (MIT-licensed models only), and more testers with different hands, cameras and rooms.</p>
+      </section>
+
+      <section aria-labelledby="privacy">
+        <h2 id="privacy">Privacy</h2>
+        <p>Camera processing happens in the browser. No video, hand data or scans are uploaded.</p>
+      </section>
+
+      <nav class="cs-end" aria-label="Project links">
+        <ul class="btns">
+          <li><a class="btn btn-primary" href="https://crazycatz67.github.io/hologram-workshop/" rel="noopener">Try it live ↗</a></li>
+          <li><a class="btn" href="https://github.com/Crazycatz67/hologram-workshop" rel="noopener">Source ↗</a></li>
+          <li><a class="btn" href="../music/">Next project: Music Trainer →</a></li>
+        </ul>
+      </nav>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Farhan Amin · Built by hand (and by hands) · <a href="mailto:mail.aminfarhan@gmail.com">Email</a> · <a href="https://github.com/Crazycatz67" rel="noopener">GitHub</a><span data-linkedin hidden> · <a href="#" rel="noopener">LinkedIn</a></span></span>
+    <a href="https://github.com/Crazycatz67/Crazycatz67.github.io" rel="noopener">Source on GitHub</a>
+  </div>
+</footer>
+</body>
+</html>
